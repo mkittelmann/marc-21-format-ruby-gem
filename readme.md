@@ -1,6 +1,6 @@
 # MARC21 Format Parser and CLI tool
 
-Please note that this gem is is _alpha_ state. 
+Please note that this gem is in _alpha_ state. 
 
 Try it (install as a local gem):
 
