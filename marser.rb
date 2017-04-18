@@ -23,7 +23,7 @@ class Marser
   attr_reader :marc_raw, :marc
 
   def initialize( file = '' )
-    @source = file != '' && File.exist?( file ) ? File.readlines( file, 'r:utf-8')[0].lines : MARCLOCGOV.new.crawl.split( "\n" ) 
+    @source = file != '' && File.exist?( file ) ? File.readlines( file, 'r:utf-8')[0].lines : MARCLOCGOV.new.crawl.lines
     @marc_raw = @source.map(&:chomp).select { |line|  line if !line.match(/^\s*$/) && !line.match(/^--.+/) }
     @marc = step marc_raw
   end
