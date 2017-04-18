@@ -1,4 +1,4 @@
-= MARC21 Format Parser and CLI tool
+# MARC21 Format Parser and CLI tool
 
 Please note that this gem is is _alpha_ state. 
 
