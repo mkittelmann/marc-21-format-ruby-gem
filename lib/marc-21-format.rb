@@ -131,6 +131,10 @@ class MARC21Format
     m = Marser.new( file )
     @marc = m.marc
   end
+  
+  def each
+    marc.each
+  end
     
   def find( str )
     marc.select { |k,v| { k => v } if ( k.match( /#{str}/i ) || v.to_s.match( /#{str}/i ) ) } 
@@ -360,6 +364,15 @@ class MARC21Format
       end
     end    
     nil 
+  end
+  
+  
+  def get_indicator_values
+  
+  end
+  
+  def get_subfield_values
+  
   end
     
 end
