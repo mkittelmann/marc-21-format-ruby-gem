@@ -86,6 +86,8 @@
     
     <li ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-each">#each</a>
+    
     <li ><a href="#method-i-find">#find</a>
     
     <li ><a href="#method-i-get">#get</a>
@@ -94,9 +96,13 @@
     
     <li ><a href="#method-i-get_indicator">#get_indicator</a>
     
+    <li ><a href="#method-i-get_indicator_values">#get_indicator_values</a>
+    
     <li ><a href="#method-i-get_indicators">#get_indicators</a>
     
     <li ><a href="#method-i-get_subfield">#get_subfield</a>
+    
+    <li ><a href="#method-i-get_subfield_values">#get_subfield_values</a>
     
     <li ><a href="#method-i-get_subfields">#get_subfields</a>
     
@@ -312,7 +318,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 130</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 130</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">file</span> = <span class="ruby-string">&#39;&#39;</span> )
   <span class="ruby-identifier">m</span> = <span class="ruby-constant">Marser</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">file</span> )
   <span class="ruby-ivar">@marc</span> = <span class="ruby-identifier">m</span>.<span class="ruby-identifier">marc</span>
@@ -335,6 +341,39 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
        </header>
 
     
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">each</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-find" class="method-detail ">
         
         <div class="method-heading">
@@ -354,7 +393,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="find-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 135</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>( <span class="ruby-identifier">str</span> )
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> { <span class="ruby-identifier">k</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">v</span> } <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">k</span>.<span class="ruby-identifier">match</span>( <span class="ruby-node">/#{str}/i</span> ) <span class="ruby-operator">||</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">match</span>( <span class="ruby-node">/#{str}/i</span> ) ) } 
 <span class="ruby-keyword">end</span></pre>
@@ -387,7 +426,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 139</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>( <span class="ruby-identifier">syntax</span> )
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">syntax</span>
     <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\$.+i/</span>
@@ -435,7 +474,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_defined_indicators-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 256</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 260</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_defined_indicators</span>
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Indicators&#39;</span>]
@@ -482,7 +521,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_indicator-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 273</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 277</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_indicator</span>( <span class="ruby-identifier">tag_and_indicator</span> )
   <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">indicator</span> = <span class="ruby-identifier">tag_and_indicator</span>.<span class="ruby-identifier">split</span>( <span class="ruby-regexp">/\s*i/</span> )
   <span class="ruby-identifier">indicator</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">indicator</span>.<span class="ruby-identifier">split</span>( <span class="ruby-regexp">/\s*=/</span> )
@@ -498,6 +537,39 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-string">&#39;&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_indicator_values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_indicator_values</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_indicator_values-source">
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_indicator_values</span>
+
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -528,7 +600,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_indicators-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 206</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 210</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_indicators</span>( <span class="ruby-identifier">tag</span> )
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Indicators&#39;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">match</span>( <span class="ruby-identifier">tag</span> )
@@ -569,7 +641,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_subfield-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 338</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 342</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_subfield</span>( <span class="ruby-identifier">tag_and_subfield</span> )
   <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">subfield</span> = <span class="ruby-identifier">tag_and_subfield</span>.<span class="ruby-identifier">split</span>( <span class="ruby-regexp">/\s*\$/</span> )
   <span class="ruby-identifier">subfields</span> = <span class="ruby-identifier">get_subfields</span>( <span class="ruby-identifier">tag</span> )
@@ -577,6 +649,39 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">sf</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">sf</span>.<span class="ruby-identifier">match</span>( <span class="ruby-node">/^\$#{subfield}/</span> ) 
   <span class="ruby-keyword">end</span>
   <span class="ruby-string">&#39;&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_subfield_values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_subfield_values</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_subfield_values-source">
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_subfield_values</span>
+
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -641,7 +746,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_subfields-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 325</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 329</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_subfields</span>( <span class="ruby-identifier">tag</span> )
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Subfield Codes&#39;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">match</span>( <span class="ruby-identifier">tag</span> )
@@ -696,7 +801,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_tag-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 175</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 179</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_tag</span>( <span class="ruby-identifier">tag</span> )
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> { <span class="ruby-identifier">k</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">v</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">match</span>( <span class="ruby-node">/^#{tag}/</span> ) }
 <span class="ruby-keyword">end</span></pre>
@@ -745,7 +850,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_tags_with_indicators-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 196</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 200</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_tags_with_indicators</span>
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Indicators&#39;</span>]
@@ -783,7 +888,7 @@ href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/lic
 
           
           <div class="method-source-code" id="get_tags_without_indicators-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 218</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 222</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_tags_without_indicators</span>
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Indicators&#39;</span>]
@@ -830,7 +935,7 @@ positions.</p>
 
           
           <div class="method-source-code" id="get_undefined_indicators-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 237</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 241</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_undefined_indicators</span>
   <span class="ruby-identifier">marc</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, (<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)<span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Hash</span> ) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>[<span class="ruby-string">&#39;Indicators&#39;</span>]
@@ -881,7 +986,7 @@ positions.</p>
 
           
           <div class="method-source-code" id="subfield_repeatable-3F-source">
-            <pre><span class="ruby-comment"># File lib/marc21format.rb, line 353</span>
+            <pre><span class="ruby-comment"># File lib/marc-21-format.rb, line 357</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">subfield_repeatable?</span>( <span class="ruby-identifier">tag_and_subfield</span> )
   <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">subfield</span> = <span class="ruby-identifier">tag_and_subfield</span>.<span class="ruby-identifier">split</span>( <span class="ruby-regexp">/\s*\$/</span> )
   <span class="ruby-identifier">subfields</span> = <span class="ruby-identifier">get_subfields</span>( <span class="ruby-identifier">tag</span> )

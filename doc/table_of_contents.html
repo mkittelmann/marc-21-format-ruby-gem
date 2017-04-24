@@ -22,9 +22,44 @@
 <main role="main">
 <h1 class="class">Table of Contents - RDoc Documentation</h1>
 
+<h2 id="pages">Pages</h2>
+<ul>
+  <li class="file">
+    <a href="Gemfile.html">Gemfile</a>
+  </li>
+    <li class="file">
+    <a href="Rakefile.html">Rakefile</a>
+  </li>
+    <li class="file">
+    <a href="marc-21-format_gemspec.html">marc-21-format.gemspec</a>
+  </li>
+    <li class="file">
+    <a href="readme_md.html">readme</a>
+
+    <ul>
+      <li><a href="readme_md.html#label-MARC21+Format+Parser+and+CLI+tool">MARC21 Format Parser and CLI tool</a>
+    </ul>
+  </li>
+    <li class="file">
+    <a href="test/documentation/marc21_json.html">marc21.json</a>
+  </li>
+    <li class="file">
+    <a href="test/documentation/marc21_txt.html">marc21</a>
+  </li>
+    <li class="file">
+    <a href="test/examples/marc21_live_val.html">marc21_live.val</a>
+  </li>
+    <li class="file">
+    <a href="test/examples/tmp_for_comparison_txt.html">tmp_for.comparison</a>
+  </li>
+  
+</ul>
 
 <h2 id="classes">Classes and Modules</h2>
 <ul>
+  <li class="class">
+    <a href="Falcon.html">Falcon</a>
+  </li>
   <li class="class">
     <a href="MARC21Format.html">MARC21Format</a>
 
@@ -38,6 +73,15 @@
       <li><a href="MARC21Format.html#label-Usage+as+CLI+reference">Usage as CLI reference</a>
     </ul>
   </li>
+  <li class="class">
+    <a href="MARCLOCGOV.html">MARCLOCGOV</a>
+  </li>
+  <li class="class">
+    <a href="Marser.html">Marser</a>
+  </li>
+  <li class="class">
+    <a href="TestMARC21Format.html">TestMARC21Format</a>
+  </li>
 </ul>
 
 <h2 id="methods">Methods</h2>
@@ -49,9 +93,34 @@
     <span class="container">MARC21Format</span>
 
   <li class="method">
+    <a href="Falcon.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Falcon</span>
+
+  <li class="method">
+    <a href="Marser.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Marser</span>
+
+  <li class="method">
+    <a href="MARCLOCGOV.html#method-i-crawl">#crawl</a>
+    &mdash;
+    <span class="container">MARCLOCGOV</span>
+
+  <li class="method">
+    <a href="MARC21Format.html#method-i-each">#each</a>
+    &mdash;
+    <span class="container">MARC21Format</span>
+
+  <li class="method">
     <a href="MARC21Format.html#method-i-find">#find</a>
     &mdash;
     <span class="container">MARC21Format</span>
+
+  <li class="method">
+    <a href="Falcon.html#method-i-generate_validation_params">#generate_validation_params</a>
+    &mdash;
+    <span class="container">Falcon</span>
 
   <li class="method">
     <a href="MARC21Format.html#method-i-get">#get</a>
@@ -69,12 +138,22 @@
     <span class="container">MARC21Format</span>
 
   <li class="method">
+    <a href="MARC21Format.html#method-i-get_indicator_values">#get_indicator_values</a>
+    &mdash;
+    <span class="container">MARC21Format</span>
+
+  <li class="method">
     <a href="MARC21Format.html#method-i-get_indicators">#get_indicators</a>
     &mdash;
     <span class="container">MARC21Format</span>
 
   <li class="method">
     <a href="MARC21Format.html#method-i-get_subfield">#get_subfield</a>
+    &mdash;
+    <span class="container">MARC21Format</span>
+
+  <li class="method">
+    <a href="MARC21Format.html#method-i-get_subfield_values">#get_subfield_values</a>
     &mdash;
     <span class="container">MARC21Format</span>
 
@@ -104,9 +183,119 @@
     <span class="container">MARC21Format</span>
 
   <li class="method">
+    <a href="Falcon.html#method-i-indicatorize">#indicatorize</a>
+    &mdash;
+    <span class="container">Falcon</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-setup">#setup</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
     <a href="MARC21Format.html#method-i-subfield_repeatable-3F">#subfield_repeatable?</a>
     &mdash;
     <span class="container">MARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-subfield_repeatable_non_existant">#subfield_repeatable_non_existant</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_find">#test_find</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_defined_indicators">#test_get_defined_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_indicators">#test_get_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_indicators_if_no_indicators">#test_get_indicators_if_no_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_single_indicator">#test_get_single_indicator</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_single_subfield_that_does_not_exist">#test_get_single_subfield_that_does_not_exist</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_single_subfield_that_exist">#test_get_single_subfield_that_exist</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_subfields">#test_get_subfields</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_subfields_if_no_subfields">#test_get_subfields_if_no_subfields</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_tags_with_indicators">#test_get_tags_with_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_tags_without_indicators">#test_get_tags_without_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_get_undefined_indicators">#test_get_undefined_indicators</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_load_format_from_file">#test_load_format_from_file</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_load_format_live_from_web">#test_load_format_live_from_web</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_subfield_repeatable_false">#test_subfield_repeatable_false</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="TestMARC21Format.html#method-i-test_subfield_repeatable_true">#test_subfield_repeatable_true</a>
+    &mdash;
+    <span class="container">TestMARC21Format</span>
+
+  <li class="method">
+    <a href="Falcon.html#method-i-validate">#validate</a>
+    &mdash;
+    <span class="container">Falcon</span>
+
+  <li class="method">
+    <a href="Falcon.html#method-i-validate_indicators">#validate_indicators</a>
+    &mdash;
+    <span class="container">Falcon</span>
+
+  <li class="method">
+    <a href="Falcon.html#method-i-validate_subfields">#validate_subfields</a>
+    &mdash;
+    <span class="container">Falcon</span>
 </ul>
 </main>
 

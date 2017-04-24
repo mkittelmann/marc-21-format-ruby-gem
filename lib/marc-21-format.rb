@@ -1,5 +1,5 @@
-require 'marc21format/marclocgov'
-require 'marc21format/marser'
+require 'marc-21-format/marclocgov'
+require 'marc-21-format/marser'
 require 'rest-client'
 require 'nokogiri'
 require 'pp'
